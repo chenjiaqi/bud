@@ -13,6 +13,14 @@
 
 
 
+void executeCmd(const char * cmd,char *result)
+{
+    char result_buf[1024] = {0,};
+    
+
+}
+
+
 int main(int argc, char *argv[])
 {
     FILE * fstream = NULL;
