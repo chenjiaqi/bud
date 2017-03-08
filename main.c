@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include"common.h"
-#include<windows.h>
 
 #ifdef _WIN32
+#include<windows.h>
 #define SS 1
 #elif 
 #define SS 2
