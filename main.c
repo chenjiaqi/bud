@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
     LOG("helloworldd%d\n",5);
     LOG("helloworld\n");
     LOG("%d",SS);
+    ;
     return 0;
 
 }
