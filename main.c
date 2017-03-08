@@ -8,8 +8,6 @@
 #define SS 2
 #endif
 
-
-
 //#define STR(s) #s
 //#define LOG2(format,...) printf("%s%d:"format,__FUNCTION__,__LINE__,##__VA_ARGS__)
 
