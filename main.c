@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include"common.h"
+//#include<unistd.h>
 
 #ifdef _WIN32
 #include<windows.h>
@@ -16,7 +17,7 @@
 void executeCmd(const char * cmd,char *result)
 {
     char result_buf[1024] = {0,};
-    
+
 
 }
 
@@ -24,18 +25,25 @@ void executeCmd(const char * cmd,char *result)
 int main(int argc, char *argv[])
 {
     FILE * fstream = NULL;
-    char buff[1024];
-    memset(buff,0,sizeof(buff));
-    if(NULL == (fstream = popen("ping www.baidu.com","r")))
+    char buff[1024] = {0,};
+    if(NULL == (fstream = popen("telnet","w")))
     {
         fprintf(stderr,"execute command failed");
         return -1;
     }
-    //write(fstream,"uname -a",8);
-    while(NULL != fgets(buff,sizeof(buff),fstream))
+    fprintf(fstream,"?\n");
+    int j = 1;
+    while(j != 0) 
     {
-        printf("%s",buff);
+        scanf("%d",&j);
+        fprintf(fstream,"?\n");
+        printf("\n**********\n");
     }
+
+   // while(NULL != fgets(buff,sizeof(buff),fstream))
+    //{
+     //   printf("%s",buff);
+   // }
     pclose(fstream);
     return 0;
 }
