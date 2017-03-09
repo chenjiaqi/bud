@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
         scanf("%d",&j);
         fprintf(fstream,"?\n");
         printf("\n**********\n");
+        printf("\n**********\n");
     }
 
    // while(NULL != fgets(buff,sizeof(buff),fstream))
