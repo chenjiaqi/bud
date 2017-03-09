@@ -47,16 +47,15 @@ int main(int argc, char *argv[])
     FILE *istream,*ostream;
 
     char cmd[200] = {0};
-    while(scanf("%s",cmd))
+    while(fgets(cmd,200,stdin))
     {
 
         popen2(cmd,&istream,&ostream);
-        
         char buf[200] = {0,};
-        while(NULL != fgets(buf,200,ostream))
+
+        while(fgets(buf,200,ostream))
         {
          printf("%s",buf);
-
         }
         printf("\n********over********\n");
     }

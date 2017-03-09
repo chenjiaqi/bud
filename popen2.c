@@ -29,7 +29,6 @@ void popen2(const char *cmdstr,FILE ** istream,FILE ** ostream)
 
     else if(0 == pid) // child 
     {
-        printf("child\n");
         char buff[200] = {0,};
         if(pfdout[1] != STDOUT_FILENO)
         {
@@ -51,8 +50,8 @@ void popen2(const char *cmdstr,FILE ** istream,FILE ** ostream)
     {
         close(pfdin[0]);
         close(pfdout[1]);
-        printf("parent\n");
         *istream = fdopen(pfdin[1],"w");
         *ostream = fdopen(pfdout[0],"r");
+        wait(0);
     }
 }
