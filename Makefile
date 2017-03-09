@@ -1,7 +1,9 @@
 cc = gcc
 #SHELL = cmd.exe
 
-a.exe:main.o
-	$(cc) -o a.exe main.o 
-main.o:main.c
-	$(cc) -c -g -o main.o main.c
+main.out:main.o popen2.o
+	$(cc) -o main.out main.o popen2.o 
+main.o:main.c 
+	$(cc) -c  -o main.o main.c
+popen2.o:popen2.c
+	$(cc) -c -o popen2.o popen2.c
